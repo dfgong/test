@@ -7,7 +7,9 @@ http.createServer((request, response) => {
     response.end('xxxxx');
   } else {
     const raw = fs.readFileSync('test.html');
-    response.statusCode = 302;
+    // response.setHeader('Location', '/xxx');
+    // response.statusCode = 302;
+    console.log(2);
     response.end(raw);
   }
 }).listen(8000);

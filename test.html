@@ -10,7 +10,13 @@ xxxxxxaaaaa
   console.log('aaaa\r\nbbbbbb\ncccccc\rdddddd')
 
   fetch('/xxx', {
-    method: 'GET',
+    method: 'POST',
+    body: {a: 1}, // must match 'Content-Type' header
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, same-origin, *omit
+    headers: {
+      'content-type': 'application/json'
+    },
   }).then(response => {
     console.log(response);
   })
